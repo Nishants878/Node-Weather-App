@@ -4,6 +4,9 @@ const hbs = require('hbs')
 const app = express()
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+const port = process.env.PORT || 3005
+
+
 
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -97,6 +100,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3005, () => {
+app.listen(port, () => {
     console.log('Server is listening at 3005')
 })
